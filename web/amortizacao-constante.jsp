@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1><b><center>Amorticação Constante, ou SAC</center></b></h1>
-      
+        <a href="home.jsp">Home</a>
         <div>
           <center>
               <form name ="frmconstante">
@@ -35,20 +35,29 @@
 {
        DecimalFormat formata = new DecimalFormat("###,###,###,###,###.##");
       //criação das variáveis para capturar valores do formulário
-      String parametroCalcular = request.getParameter("btnCalcula");
                 
-      double valor = 0.00, juros = 0.00, CalcJuros = 0.00,
-      prestacao = 0, Amortizacao = 0, txJuros = 0.00, Prestacao = 0.00, Saldve = 0.00;
-      int parc = 0; 
-      String semValor = "-";
-               
-                if (parametroCalcular != null) 
-                {valor =  Double.parseDouble(request.getParameter("txtValor"));
+      double valor = 0.00, juros = 0.00, CalcJuros = 0.00, Amortizacao = 0;
+      int parc = 0;
+      
+               if (request.getParameter("btnCalcula") != null) 
+               {valor =  Double.parseDouble(request.getParameter("txtValor"));
                 juros =  Double.parseDouble(request.getParameter("txJuros")); 
                 parc  =  Integer.parseInt(request.getParameter("txtParcelas"));
-                juros = juros/100;
+                if (valor > 0 && juros > 0 && parc > 0){
+                double[] prestacao = new double [parc];
+                double[] txJuros =new double[parc];
+                double[] Valorc = new double[parc];
+                double[] Saldve = new double[parc];
+                
+                Amortizacao = (valor/parc);
+                txJuros[0] = valor * (juros / 100);
+                
+                Saldve[0] = valor - Amortizacao;
+                prestacao[0] = Amortizacao + txJuros[0];
+                
+               
                 %>
-        <table border="1">
+    <center><table border="1">
                 <tr>
                 <th>Número da parc</th>
                 <th>Valor parcela</th> 
@@ -57,45 +66,47 @@
                 <th>Saldo dev</th>
                 </tr>
                 
-            <%for (int i = 0; i <= parc; i++)
-              {      
-                  txJuros = juros * valor;
-                  prestacao   = parc + txJuros ;
-                  Amortizacao = (valor/parc);
-                  Saldve = valor - Amortizacao;
+                <tr>
+                <td><center>0</center></td>
+                <td><center> - </center></td>
+                <td><center> - </center></td>
+                <td><center> - </center></td>
+                <td><center><%=formata.format(valor)%></center></td>
+                </tr>  
+                
+                <tr>
+                <td><center>1</center></td>
+                <td><center><%=formata.format(prestacao[0])%></center></td>
+                <td><center> <%=formata.format(Amortizacao)%> </center></td>
+                <td><center> <%=formata.format(txJuros[0])%> </center></td>
+                <td><center> <%=formata.format(Saldve[0])%> </center></td>
+                </tr> 
+                
+            <%for (int i = 1; i < parc; i++)
+              {   
+                  Saldve[i] = Saldve[i - 1] - Amortizacao;
+                  txJuros[i] = Saldve[i - 1] * (juros / 100);
+                  prestacao[i] = Amortizacao + txJuros[i];
             %>
                 <tr>
-                <td><center><%=i%></center></td>
-                <td><center><%=formata.format(prestacao)%></center></td>
+                <td><center><%=(i + 1)%></center></td>
+                <td><center><%=formata.format(prestacao[i])%></center></td>
                 <td><center><%=formata.format(Amortizacao)%></center></td>
-                <td><center><%=formata.format(txJuros)%></center></td>
-                <td><center><%=formata.format(Saldve)%></center></td>
-                </tr>
-            <%}%>
-       
-            <%}else if(parc==1){ //Em caso de ser uma parcela%>
-                <tr>
-                <td><center><%= parc %></center></td>
-                <td><center><%= formata.format(valor) %></center></td>
-                <td><center><%= semValor %></center></td>
-                <td><center><%= semValor %></center></td>
-                <td><center><%= semValor %></center></td>
-                </tr>                            
-            <%}else{//Caso não seja nenhuma das anteriores%>
-                <tr>
-                <td><center><%= semValor %></center></td>
-                <td><center><%= semValor %></center></td>
-                <td><center><%= semValor %></center></td>
-                <td><center><%= semValor %> </center></td>
-                <td><center><%= semValor %></center></td>
-                </tr> 
-            
+                <td><center><%=formata.format(txJuros[i])%></center></td>
+                <td><center><%=formata.format(Saldve[i])%></center></td>
+                </tr>       
+
            <%}%>
-             </table>
+           <%}else{%>
+            <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
+            <%}%>
+        </table></center>
+           <%}%>
+             
        
         <%}
             catch(Exception ex){ //devolvendo erro ao usuário caso tenha digitado letras%>
-            <span style="color: red"><h2>Digite apenas números!!!</h2></span>
+            <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
             <%}%>
          
     </body>
