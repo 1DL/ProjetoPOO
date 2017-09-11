@@ -1,11 +1,12 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h3>Sistema de Cálculo de Amortização</h3>
+<center><h3>Sistema de Cálculo de Amortização</h3>
 <a href="home.jsp">Home</a> |
 <a href="amortizacao-americana.jsp">Amortização Americana</a> |
 <a href="amortizacao-constante.jsp">Amortização Constante</a> |
 <a href="tabela-price.jsp">Tabela Price</a><br>
 <form>
-  <input type="button" value="Voltar" onclick="history.back()" >
-  </input>
+    <br><input type="button" value="Voltar" onclick="history.back()"></input>
+    <input type="button" value="Avançar" onclick="history.forward()"></input>
 </form>
+</center>

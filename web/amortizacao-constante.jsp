@@ -14,6 +14,7 @@
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <h1><b><center>Amortização Constante, ou SAC</center></b></h1>
+    <center>
         <div>
 
 
@@ -37,7 +38,7 @@
                         </th>
                     </tr>
                 </table>
-                <input type="submit" name="btnCalcula" value="Analisar"/>
+                <br><input type="submit" name="btnCalcula" value="Analisar"/>
             </form>
 
         </div>
@@ -67,17 +68,19 @@
 
 
         %>
-    <center><table border="1">
+        <br>
+        <table border="1">
             <tr>
-                <th>Número da parc</th>
+                <th>Número da Parcela</th>
+                <th>Juros</th>
                 <th>Valor parcela</th> 
                 <th>Amortização</th>
-                <th>Juros</th>
-                <th>Saldo dev</th>
+                
+                <th>Saldo Devedor</th>
             </tr>
 
             <tr>
-                <td><center>0</center></td>
+                <td><center>-</center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
@@ -86,10 +89,9 @@
 
             <tr>
                 <td><center>1</center></td>
-            <td><center><%=formata.format(prestacao[0])%></center></td>
-            <td><center> <%=formata.format(Amortizacao)%> </center></td>
             <td><center> <%=formata.format(txJuros[0])%> </center></td>
-            <td><center> <%=formata.format(Saldve[0])%> </center></td>
+            <td><center><%=formata.format(prestacao[0])%></center></td>
+            <td><center> <%=formata.format(Amortizacao)%> </center></td><td><center> <%=formata.format(Saldve[0])%> </center></td>
             </tr> 
 
             <%for (int i = 1; i < parc; i++) {
@@ -99,9 +101,9 @@
             %>
             <tr>
                 <td><center><%=(i + 1)%></center></td>
+        <td><center><%=formata.format(txJuros[i])%></center></td>
             <td><center><%=formata.format(prestacao[i])%></center></td>
             <td><center><%=formata.format(Amortizacao)%></center></td>
-            <td><center><%=formata.format(txJuros[i])%></center></td>
             <td><center><%=formata.format(Saldve[i])%></center></td>
             </tr>       
 
@@ -109,13 +111,13 @@
             <%} else {%>
             <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
                         <%}%>
-        </table></center>
+        </table>
         <%}%>
 
 
     <%} catch (Exception ex) { //devolvendo erro ao usuário caso tenha digitado letras%>
     <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
                 <%}%>
-
+    </center>
 </body>
 </html>
