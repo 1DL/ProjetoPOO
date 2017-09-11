@@ -16,6 +16,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
+        <h1><b><center>Amorticação via Tabela Price</center></b></h1>
         <%
             String c = "%";
             double p = 0;
@@ -76,7 +77,7 @@
 
         %>
         <form name="frm_price" method="get">
-            <br>
+            
             <div>
                 <table>
                     <tr align="left">
@@ -84,24 +85,24 @@
                             <font face ="verdana" size="3"><b>Valor: R$ </b></font>
                         </th>
                         <th>
-                            <input type="number" name="pv" value="<%=pv%>" size="10"/>
+                            <input type="number" name="pv" placeholder="Insira o capital R$" size="5"/>
                         </th>
                     </tr>
                     <tr align="left">
                         <th>
-                            <font face ="verdana" size="3"><b>Número de Prestações: </b></font>
+                            <font face ="verdana" size="3"><b>Número de Parcelas: </b></font>
                         </th>
                         <th>
-                            <input type="text" name="n" value="<%=n%>" size="10"/>
+                            <input type="number" name="n" placeholder="Insira o número de parcelas" size="5"/>
                         </th>
                     </tr>
                     <tr align="left">
                         <th>
-                            <font face ="verdana" size="3"><b>Taxa de Júros: </b></font>
+                            <font face ="verdana" size="3"><b>Taxa de Juros: </b></font>
                         </th>
                         <th>
-                            <input type="number" name="i" value="<%=(i * 100)%>" size="10"/>
-                            %
+                            <input type="number" name="i" placeholder="Insira a taxa de juros" size="5"/>
+                            
                         </th>
                     </tr>
                 </table>
