@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tabela Price</title>
+        <title>Tabela Price amem7</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
