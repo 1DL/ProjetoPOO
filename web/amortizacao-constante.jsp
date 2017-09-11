@@ -33,7 +33,7 @@
         
  <% try
 {
-       DecimalFormat formata = new DecimalFormat("###,###,###,###,###.##");
+       DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
       //criação das variáveis para capturar valores do formulário
                 
       double valor = 0.00, juros = 0.00, CalcJuros = 0.00, Amortizacao = 0;
