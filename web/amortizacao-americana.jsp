@@ -14,6 +14,6 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        amem 3
+        amem 6
     </body>
 </html>
