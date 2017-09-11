@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tabela Price amem7</title>
+        <title>Tabela Price</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
@@ -25,11 +25,10 @@
             double juros = 0;
             double a = 0;
             int n = 0;
-            String msg[] = {"", "", ""};
+
             boolean flag = true;
-            
-           
-            
+            DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
+
             try {
 
             } catch (Exception ex) {
@@ -52,35 +51,29 @@
             public double parcela(double pv, double i, int n) {
                 double pmt = 0;
                 try {
-                pmt = pv * (Math.pow((1+i), n) * i )/(Math.pow((1+i), n) - 1);
-                } catch (Exception ex) {}
+                    pmt = pv * (Math.pow((1 + i), n) * i) / (Math.pow((1 + i), n) - 1);
+                } catch (Exception ex) {
+                }
                 return pmt;
             }
 
-            
+
         %>
         <% //montante = BigDecimal.valueOf(montante).setScale(2, RoundingMode.HALF_UP).doubleValue();
             if (verifica(request.getParameter("pv")) >= 0) {
                 pv = verifica(request.getParameter("pv"));
-                pv = BigDecimal.valueOf(pv).setScale(2, RoundingMode.UP).doubleValue();
-            } else {
-                msg[0] = "Valor incorreto.";
-                
-            }
-            if (verifica(request.getParameter("n")) >= 0) {
-                n = (int) verifica(request.getParameter("n"));
-            } else {
-                msg[1] = "Quantidade de Parcelas inválida.";
-            }
-            if (verifica(request.getParameter("i")) >= 0) {
-                i = (verifica(request.getParameter("i"))/100);
-                i = BigDecimal.valueOf(i).setScale(2, RoundingMode.HALF_UP).doubleValue();
-            } else {
-                msg[2] = "Taxa de juros inválida.";
+
             }
 
+            if (verifica(request.getParameter("n")) >= 0) {
+                n = (int) verifica(request.getParameter("n"));
+            }
+            if (verifica(request.getParameter("i")) >= 0) {
+                i = (verifica(request.getParameter("i")) / 100);
+
+            }
             pmt = parcela(pv, i, n);
-            
+
         %>
         <form name="frm_price" method="get">
             <br>
@@ -91,7 +84,7 @@
                             <font face ="verdana" size="3"><b>Valor: R$ </b></font>
                         </th>
                         <th>
-                            <input type="text" name="pv" value="<%=pv%>" size="10"/>
+                            <input type="number" name="pv" value="<%=pv%>" size="10"/>
                         </th>
                     </tr>
                     <tr align="left">
@@ -107,14 +100,14 @@
                             <font face ="verdana" size="3"><b>Taxa de Júros: </b></font>
                         </th>
                         <th>
-                            <input type="text" name="i" value="<%=(i*100)%>" size="10"/>
+                            <input type="number" name="i" value="<%=(i * 100)%>" size="10"/>
                             %
                         </th>
                     </tr>
                 </table>
                 <input type="submit" name="calcular" value="Gerar Tabela"/>
-                
-                
+
+
             </div>
 
         </form>
@@ -126,31 +119,24 @@
 
             <table border="1">
                 <tr>
-                    <th>Mês</th><th>Saldo Devedor</th><th>Parcela</th><th>Juros</th><th>Amortizaçãor</th>
+                    <th>Mês</th><th>Saldo Devedor</th><th>Parcela</th><th>Juros</th><th>Amortização</th>
                 </tr>
                 <tr>
                     <td></td><td></td><td></td><td></td><td><%=pv%></td>
                 </tr>
                 <%for (int j = 1; j <= n; j++) {
-                    pmt = BigDecimal.valueOf(pmt).setScale(2, RoundingMode.HALF_UP).doubleValue();
-                    
-                    juros = pv * i;
-                    juros = BigDecimal.valueOf(juros).setScale(2, RoundingMode.HALF_UP).doubleValue();
-                    
-                    a = pmt - juros;
-                    a = BigDecimal.valueOf(a).setScale(2, RoundingMode.HALF_UP).doubleValue();
-                    
-                    pv = pv - a;
-                    pv = BigDecimal.valueOf(pv).setScale(2, RoundingMode.UP).doubleValue();
-                    if (j == n) {
-                        pv = 0.00;
-                    }
-                
+
+                        juros = pv * i;
+
+                        a = pmt - juros;
+
+                        pv = pv - a;
+
                 %>
-                
+
                 <tr>
-                    <td><%=j%></td><td><%=pv%></td><td><%=pmt%></td><td><%=juros%></td><td><%=a%></td>
-                    
+                    <td><%=j%></td><td><%=formata.format(pv)%></td><td><%=formata.format(pmt)%></td><td><%=formata.format(juros)%></td><td><%=formata.format(a)%></td>
+
                 </tr>
                 <%}%>
             </table>

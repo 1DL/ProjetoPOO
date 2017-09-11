@@ -9,9 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>amem6</title>
+        <title>Sistema de Amortização</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
+        <h1>Programação Orientada a Objetos - Projeto 02</h2><hr>
+        <h2>Integrantes:</h2>
+        <h3><ul>
+                <li>Gabriel Damico da Fonseca</li>
+                <li>Luciana da Fonseca Machado</li>
+                <li>Luiz Henrique da Silva Alberto</li>
+        </ul></h3>
     </body>
 </html>
