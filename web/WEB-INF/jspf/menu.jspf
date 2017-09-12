@@ -9,5 +9,5 @@
 
 <button onclick="window.location.href='amortizacao-americana.jsp'">Amortização Americana</button>
 <button onclick="window.location.href='amortizacao-constante.jsp'">Amortização Constante</button>
-<button onclick="window.location.href='amortizacao-constante.jsp'">Tabela Price</button>
+<button onclick="window.location.href='tabela-price.jsp'">Tabela Price</button>
 <br><br>
