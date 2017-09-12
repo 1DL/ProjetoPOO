@@ -13,9 +13,9 @@ Author     : LuizV1
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <metacontent="width=device-width, initial-scale=1, maximum-scale=1"name="viewport">
         <link href="css/seu-stylesheet.css" rel="stylesheet"/>
-        <title>JSP Page</title>
+        <title>Sistema de Amortização</title>
     </head>
-    <body>
+    <body background="imagens/bg.jpg">
         <%@include file="WEB-INF/jspf/header.jspf" %>
   
         <header>
