@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Amortização constante</title>
+        <title>Amortização Americana</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h1><b><center>Amortização americana</center></b></h1>
+        <h1><b><center>Amortização Americana</center></b></h1>
     <center>
         
         <%@include file="WEB-INF/jspf/menu.jspf"%>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h1><b><center>Amortização via Tabela Price</center></b></h1>
+        <h1><b><center>Financiamento Price</center></b></h1>
     <center>
                     <%
                         String c = "%";
