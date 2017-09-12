@@ -27,14 +27,12 @@
                         double juros = 0;
                         double a = 0;
                         int n = 0;
+                        double total[] = {0,0,0}; 
 
-                        boolean flag = true;
+                       
                         DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
 
-                        try {
-
-                        } catch (Exception ex) {
-                        }
+                        
 
 
                     %>
@@ -62,57 +60,23 @@
 
                     %>
                     <% //montante = BigDecimal.valueOf(montante).setScale(2, RoundingMode.HALF_UP).doubleValue();
-                        if (verifica(request.getParameter("pv")) >= 0) {
-                            pv = verifica(request.getParameter("pv"));
+                        if (verifica(request.getParameter("txtValor")) >= 0) {
+                            pv = verifica(request.getParameter("txtValor"));
 
                         }
 
-                        if (verifica(request.getParameter("n")) >= 0) {
-                            n = (int) verifica(request.getParameter("n"));
+                        if (verifica(request.getParameter("txtParcelas")) >= 0) {
+                            n = (int) verifica(request.getParameter("txtParcelas"));
                         }
-                        if (verifica(request.getParameter("i")) >= 0) {
-                            i = (verifica(request.getParameter("i")) / 100);
+                        if (verifica(request.getParameter("txJuros")) >= 0) {
+                            i = (verifica(request.getParameter("txJuros")) / 100);
 
                         }
                         pmt = parcela(pv, i, n);
 
                     %>
-        <form name="frm_price" method="get">
-
-            <div>
-                <table>
-                    <tr align="left">
-                        <th>
-                            <font face ="verdana" size="3"><b>Valor: R$ </b></font>
-                        </th>
-                        <th>
-                            <input type="number" name="pv" placeholder="Insira o capital R$" size="5"/>
-                        </th>
-                    </tr>
-                    <tr align="left">
-                        <th>
-                            <font face ="verdana" size="3"><b>Número de Parcelas: </b></font>
-                        </th>
-                        <th>
-                            <input type="number" name="n" placeholder="Insira o número de parcelas" size="5"/>
-                        </th>
-                    </tr>
-                    <tr align="left">
-                        <th>
-                            <font face ="verdana" size="3"><b>Taxa de Juros: </b></font>
-                        </th>
-                        <th>
-                            <input type="number" name="i" placeholder="Insira a taxa de juros" size="5"/>
-
-                        </th>
-                    </tr>
-                </table>
-                <br><input type="submit" name="calcular" value="Analisar"/>
-
-
-            </div>
-
-        </form>
+        
+                    <%@include file="WEB-INF/jspf/menu.jspf"%>
         <div>
             <%if (pv > 0 && n > 0 && i > 0) {%>
 
@@ -139,10 +103,12 @@
                 <%for (int j = 1; j <= n; j++) {
 
                         juros = pv * i;
-
                         a = pmt - juros;
-
                         pv = pv - a;
+                        
+                        total[0] += juros;
+                        total[1] += pmt;
+                        total[2] += a;
 
                 %>
 
@@ -154,8 +120,17 @@
                 <td><center><%=formata.format(pv)%></center></td>
                 </tr>
                 <%}%>
+                <tr>
+                    <td><center>TOTAL</center></td>
+                    <td><center><%=formata.format(total[0])%></center></td>
+                    <td><center><%=formata.format(total[1])%></center></td>
+                    <td><center><%=formata.format(total[2])%></center></td>
+                    <td><center><%=formata.format(0)%></center></td>
+                </tr>
             </table>
-            <%}%>
+            <%} 
+            
+            %>
         </div>
     </center>
     </body>
