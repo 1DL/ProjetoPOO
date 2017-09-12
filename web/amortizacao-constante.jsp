@@ -46,13 +46,13 @@
         %>
         <br>
         <table border="1">
-            <tr>
+            <tr bgcolor="#E3F6CE">
                 <th>Número da Parcela</th>
                 <th>Juros</th>
                 <th>Valor da parcela</th> 
                 <th>Amortização</th>
-                
                 <th>Saldo Devedor</th>
+                
             </tr>
 
             <tr>

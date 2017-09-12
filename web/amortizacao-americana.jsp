@@ -43,7 +43,7 @@
         %>
         <br>
         <table border="1">
-            <tr>
+            <tr bgcolor="#E3F6CE">
                 <th>Número da Parcela</th>
                 <th>Juros</th>
                 <th>Valor da parcela</th> 
@@ -71,8 +71,8 @@
                     if (i == (parc - 1)){   
             %>
                   
-            <tr>
-            <td><center><%= i %></center></td>
+            <tr>bgcolor="#E3F6CE">
+            <td><center><%= "total" %></center></td>
             <td><center><%=formata.format(txJuros[i])%></center></td>
             <td><center><%=formata.format(valor + txJuros[i])%></center></td>
             <td><center><%=formata.format(valor)%></center></td>
