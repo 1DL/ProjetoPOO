@@ -12,7 +12,7 @@
         <title>Amortização constante</title>
     </head>
     <body>
-        
+        <%@include file="WEB-INF/jspf/header.jspf" %>
         <h1><b><center>Amortização americana</center></b></h1>
     <center>
         <div>
