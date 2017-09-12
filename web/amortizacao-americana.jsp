@@ -69,7 +69,7 @@
             <tr>
                 <th>Número da Parcela</th>
                 <th>Juros</th>
-                <th>Valor parcela</th> 
+                <th>Valor da parcela</th> 
                 <th>Amortização</th>
                 <th>Saldo Devedor</th>
             </tr>
