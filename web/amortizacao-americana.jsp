@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Americana</title>
     </head>
-    <body background="imagens/bg.jpg">
+    <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <h1><b><center>Amortização Americana</center></b></h1>
     <center>

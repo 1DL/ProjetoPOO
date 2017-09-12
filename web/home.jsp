@@ -15,7 +15,7 @@ Author     : LuizV1
         <link href="css/seu-stylesheet.css" rel="stylesheet"/>
         <title>Sistema de Amortização</title>
     </head>
-    <body background="imagens/bg.jpg">
+    <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
   
         <header>

@@ -12,9 +12,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Tabela Price</title>
     </head>
-    <body background="imagens/bg.jpg">
+    <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
         <h1><b><center>Financiamento pela Tabela Price</center></b></h1>
     <center>
@@ -126,7 +127,8 @@
 
             <br>
             <table border="1">
-                <tr>
+                <thead
+                <tr  bgcolor="#E3F6CE">
                     <th>Número da Parcela</th>
                     <th>Juros</th>
                     <th>Valor da Parcela</th>
@@ -134,7 +136,7 @@
                     <th>Saldo Devedor</th>
 
                 </tr>
-                <tr>
+                <tr bgcolor="#FFFFFF">
                     <td><center>-</center></td>
                 <td><center>-</center></td>
                 <td><center>-</center></td>
@@ -159,10 +161,11 @@
                     total[0] += juros;
                     total[1] += pmt;
                     total[2] += a;
-
-                %>
-
-                <tr><!--Valores da tabela dinamica concatenando o contador do for e as variaveis -->
+                    
+                    if (j%2 == 0){%>
+                
+                   
+                <tr bgcolor="#FFFFFF"><%} else {%> <tr bgcolor="#F2F2F2"> <%}%>
                     <td><center><%=j%></center></td>
                 <td><center><%=formata.format(juros)%></center></td>
                 <td><center><%=formata.format(pmt)%></center></td>
@@ -171,7 +174,7 @@
                 </tr>
                 <%}%>
                 <tr><!--Ultima linha da tabela é manual, concatenando o total de cada valor-->
-                    <td><center>TOTAL</center></td>
+                    <td><center><b>TOTAL</b></center></td>
                 <td><center><%=formata.format(total[0])%></center></td>
                 <td><center><%=formata.format(total[1])%></center></td>
                 <td><center><%=formata.format(total[2])%></center></td>
@@ -184,7 +187,7 @@
         </div>
         
         <h3> Sobre a Tabela Price: </h3>
-        <textarea rows="12" cols="70">Tabela Price, também chamado de sistema francês de amortização, é um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais. O método foi apresentado em 1771 por Richard Price em sua obra "Observações sobre Pagamentos Remissivos" (em inglês: Observations on Reversionary Payments[1]).
+        <textarea rows="12" cols="70">Tabela Price, também chamado de sistema francês de amortização, é um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais. O método foi apresentado em 1771 por Richard Price em sua obra "Observações sobre Pagamentos Remissivos" (em inglês: Observations on Reversionary Payments).
 
 O método foi idealizado pelo seu autor para pensões e aposentadorias. No entanto, foi a partir da 2ª revolução industrial que sua metodologia de cálculo foi aproveitada para cálculos de amortização de empréstimo.
 

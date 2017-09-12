@@ -4,7 +4,7 @@
 
 
     <form name ="frminput">
-                <table>
+                <table bgcolor="#E0F8F7">
                     <tr align="left"><th>
                             <label><font face ="verdana" size="3"><b>Valor: </b></font></label></th>
                         <th>
