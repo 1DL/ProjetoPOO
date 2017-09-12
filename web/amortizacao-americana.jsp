@@ -12,7 +12,7 @@
         <title>Amortização constante</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/header.jspf" %>
+        
         <h1><b><center>Amortização americana</center></b></h1>
     <center>
         <div>
@@ -47,7 +47,7 @@
                 DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
                 //criação das variáveis para capturar valores do formulário
 
-                double valor = 0.00, juros = 0.00, CalcJuros = 0.00, Amortizacao = 0;
+                double valor = 0.00, juros = 0.00, CalcJuros = 0.00, Amortizacao = 0.00,total = 0.00; ;
                 int parc = 0;
 
                 if (request.getParameter("btnCalcula") != null) {
@@ -59,7 +59,7 @@
                         double[] txJuros = new double[parc];
                         double[] Valorc = new double[parc];
                         double[] Saldve = new double[parc];
-
+                       
                         
 
 
@@ -75,7 +75,7 @@
             </tr>
 
             <tr>
-                <td><center>-</center></td>
+                <td><center>0</center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
@@ -88,21 +88,35 @@
                     Saldve[i] = valor;
                     txJuros[i] = valor * (juros / 100);
                     prestacao[i] = Amortizacao + txJuros[i];
+                    
+                    if (i == (parc - 1)){   
             %>
+                  
             <tr>
-                <td><center><%=(i + 1)%></center></td>
-        <td><center><%=formata.format(txJuros[i])%></center></td>
-            <td><center><%=formata.format(prestacao[i])%></center></td>
-            <td><center><%=formata.format(Amortizacao)%></center></td>
-            <td><center><%=formata.format(Saldve[i])%></center></td>
-            </tr>       
-
-            <%}%>
+            <td><center><%= i %></center></td>
+            <td><center><%=formata.format(txJuros[i])%></center></td>
+            <td><center><%=formata.format(valor + txJuros[i])%></center></td>
+            <td><center><%=formata.format(valor)%></center></td>
+            <td><center> - </center></td>
+            </tr>
+            
             <%} else {%>
-            <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
-                        <%}%>
-        </table>
+                <tr>
+                    <td><center><%= i %></center></td>
+                    <td><center><%=formata.format(txJuros[i])%></center></td>
+                    <td><center><%=formata.format(prestacao[i])%></center></td>
+                    <td><center><%=formata.format(Amortizacao)%></center></td>
+                    <td><center><%=formata.format(Saldve[i])%></center></td>
+                </tr> 
+            <%}%>         
+            
+             
         <%}%>
+                        
+    <%}%>
+       
+        </table>
+<%}%>
 
 
     <%} catch (Exception ex) { //devolvendo erro ao usuário caso tenha digitado letras%>
