@@ -16,27 +16,40 @@ Author     : LuizV1
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="WEB-INF/jspf/header.jspf" %>
+  
         <header>
             <nav>
                 <legend><h1>Programação Orientada a Objetos - Segundo projeto</h1> 
-                    <p>Proposta: Cálculos para Amortização Americana e Constante</p></legend><br>
-                <p>Integrantes: </p>
-                <img align="rigth_top" src="home.jsp/imagens/github.pmg" alt="Logo do Github">
-                <ul>
-                    <li>Gabriel Damico - <a href="https://github.com/Gabrieldmc">@Gabrieldmc</a></li>
-                    <li>Luciana Oliveira - <a href="https://github.com/LucyMachado">@LucyMachado</a></li>
-                    <li>Luiz Henrique - <a href="https://github.com/1DL">@1DL</a></li>
-
-                    <li><aside><a href="https://github.com/">Ir Para O Projeto Final</a></aside></li><br>
-                </ul></nav><br><hr>
+                    <h2>Proposta:</h2>
+                    <font face ="verdana" size="3"><b>Esta aplicação web tem como 
+                        objetivo gerar tabelas, de acordo com o tipo de Amortização 
+                        de um financiamento desejado. Para esse projeto, os tipos
+                        de financiamento disponíveis são: Amortização Constante,
+                        Amortização Americana, e financiamento baseado na Tabela Price. </b></font></p></legend>
+                <hr>
+                <center><h1>Integrantes: <h1></center>
+                <div><center>
+                    <h2><img src="imagens/gabriel.jpg" alt="Gabriel Damico"><br>
+                    Gabriel Damico - <a href="https://github.com/gabrieldamc">@Gabrieldmc</a></h2>
+                    <h2><img src="imagens/luciana.jpg" alt="Luciana Oliveira"><br>
+                    Luciana Oliveira - <a href="https://github.com/LucyMachado">@LucyMachado</a></h2>
+                    <h2><img src="imagens/luiz.jpg" alt="Luiz Henrique"><br>
+                    Luiz Henrique - <a href="https://github.com/1DL">@1DL</a></h2>
+                </div></center>
+                    <center><img src="imagens/github.png" alt="Logo do Github">
+                    <h2><a href="https://github.com/1DL/ProjetoPOO">Ir Para O repositório no GitHub</a></h2></center><br>
+                </ul></nav>
         </header>
-        <nav class="section">
-            <img align="right" src="home.jsp/imagens/cifrao.pmg" alt="Imagem de Um Cifrão">
-            <legend><h2>Faça uma simulação e avalie</h2>
-                <p>Por favor, siga As Instruções Abaixo: <p></legend><br>
+        
+        <center><%@include file="WEB-INF/jspf/menu.jspf"%></center>
+        <center><%@include file="WEB-INF/jspf/footer.jspf"%></center>
+        
                 
-                <%@include file="WEB-INF/jspf/menu.jspf"%>
-            <!--<form>
+                </body>
+                </html>
+              
+<!--<form>
                 <form method=get ACTION=" ">
                     <fieldset>
 
@@ -56,11 +69,3 @@ Author     : LuizV1
                     </fieldset>
                 </form>
                 -->
-        </nav>
-        </header>
-        <br>
-        <footer>
-            <small>Desenvolvido pelo grupo 02 Vespertino</small>
-            <footer>
-                </body>
-                </html>

@@ -1,3 +1,15 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+<hr>
+<form>
+    <input type="button" value="Voltar" onclick="history.back()"></input>
+    <input type="button" value="Avançar" onclick="history.forward()"></input>
+    <input type="button" value="Ir para o topo" onclick="window.scrollTo(0,0)"></input>
+    <button onclick="window.location.href='home.jsp'">Home</button>
+</form>
+<br>
+<small>Desenvolvido pelo Grupo 02 da disciplina Programação Orientada a Objetos
+    - POO - 4º ciclo Vespertino. 
+    <br>Membros: Gabriel Damico, Luciana Machado, Luiz Henrique. 
+    <a href="https://github.com/1DL/ProjetoPOO">Contribua com o nosso projeto no GitHub!</a> 
+

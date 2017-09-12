@@ -16,7 +16,7 @@
         <h1><b><center>Amortização Americana</center></b></h1>
     <center>
         
-        <%@include file="WEB-INF/jspf/menu.jspf"%>
+        <%@include file="WEB-INF/jspf/form.jspf"%>
 
         <% try {
                 DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
@@ -104,6 +104,17 @@
     <%} catch (Exception ex) { //devolvendo erro ao usuário caso tenha digitado letras%>
     <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
                 <%}%>
+    <h3> Sobre a Amortização Americana: </h3>
+        <textarea rows="12" cols="70">O Sistema de Amortização Americano é uma forma de pagamento de empréstimos que se caracteriza pelo pagamento apenas dos juros da dívida,deixando o valor da dívida constante, que pode ser paga em apenas um único pagamento.
+
+Esse sistema de amortização tem a vantagem em relação ao sistema de pagamento único, pois nele não há incidência de juros sobre juros. Os juros sempre incidem sobre o valor original da dívida. Com isso o devedor pode quitar sua dívida quando quiser.
+
+Tem como desvantagem que o pagamento de juros pode, em tese, ser perpétuo mesmo quando já se pagou o equivalente à dívida em si. Para isso, basta que o número de prestações exceda 100% quando da soma dos juros simples.
+
+Texto retirado da Wikipédia.
+        </textarea>
+    <%@include file="WEB-INF/jspf/menu.jspf"%>
+    <%@include file="WEB-INF/jspf/footer.jspf"%> <!--Rodapé -->
     </center>
 </body>
 </html>

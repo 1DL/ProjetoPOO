@@ -1,0 +1,32 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div>
+
+
+    <form name ="frminput">
+                <table>
+                    <tr align="left"><th>
+                            <label><font face ="verdana" size="3"><b>Valor: </b></font></label></th>
+                        <th>
+                            <input type="number" name="txtValor" required placeholder="Insira o capital em R$" size="5"/>
+                        </th>
+                    </tr> 
+                    <tr align="left"><th>
+                            <font face ="verdana" size="3"><b>Número de Parcelas:</b></font></th>
+                        <th>
+                            <label><input type="number" name="txtParcelas" required placeholder="Insira o número de parcelas"/></label></th>
+                    </tr>
+                    <tr align="left"><th>
+                            <label><font face ="verdana" size="3"><b>Taxa de Juros:</b></font></label></th>
+                        <th>
+                            <input type="number" name="txJuros" required placeholder="Insira a taxa de juros" size="5"/>
+                        </th>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" name="btnCalcula" value="Calcular"/>
+                
+            </form>
+
+        </div>
+<br>

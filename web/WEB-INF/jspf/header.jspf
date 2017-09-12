@@ -9,4 +9,5 @@
     <br><input type="button" value="Voltar" onclick="history.back()"></input>
     <input type="button" value="Avançar" onclick="history.forward()"></input>
 </form>
+<hr>
 </center>

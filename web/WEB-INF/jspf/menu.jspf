@@ -1,31 +1,13 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<div>
+<nav class="section"><hr>
+            <center><legend><h2>Faça uma simulação:<img src="imagens/cifrao.png" alt="Imagem de Um Cifrão"></h2></center>
 
-
-    <form name ="frminput">
-                <table>
-                    <tr align="left"><th>
-                            <label><font face ="verdana" size="3"><b>Valor: </b></font></label></th>
-                        <th>
-                            <input type="number" name="txtValor" placeholder="Insira o capital em R$" size="5"/>
-                        </th>
-                    </tr> 
-                    <tr align="left"><th>
-                            <font face ="verdana" size="3"><b>Número de Parcelas:</b></font></th>
-                        <th>
-                            <label><input type="number" name="txtParcelas" placeholder="Insira o número de parcelas"/></label></th>
-                    </tr>
-                    <tr align="left"><th>
-                            <label><font face ="verdana" size="3"><b>Taxa de Juros:</b></font></label></th>
-                        <th>
-                            <input type="number" name="txJuros" placeholder="Insira a taxa de juros" size="5"/>
-                        </th>
-                    </tr>
-                </table>
-                <br>
-                <input type="submit" name="btnCalcula" value="Calcular"/>
                 
-            </form>
+        </nav>
+        </header>
 
-        </div>
+<button onclick="window.location.href='amortizacao-americana.jsp'">Amortização Americana</button>
+<button onclick="window.location.href='amortizacao-constante.jsp'">Amortização Constante</button>
+<button onclick="window.location.href='amortizacao-constante.jsp'">Tabela Price</button>
+<br><br>

@@ -13,10 +13,10 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h1><b><center>Amortização Constante, ou SAC</center></b></h1>
+        <h1><b><center>Amortização Constante (SAC)</center></b></h1>
     <center>
         
-        <%@include file="WEB-INF/jspf/menu.jspf"%>
+        <%@include file="WEB-INF/jspf/form.jspf"%>
 
         <% try {
                 DecimalFormat formata = new DecimalFormat("###,###,###,###,##0.00");
@@ -97,6 +97,17 @@
     <%} catch (Exception ex) { //devolvendo erro ao usuário caso tenha digitado letras%>
     <span style="color: red"><h2><center>Digite apenas números positivos!</center></h2></span>
                 <%}%>
+    <h3> Sobre a Amortização Constante: </h3>
+        <textarea rows="12" cols="70">Sistema de Amortização Constante (SAC) é uma forma de amortização de um empréstimo por prestações que incluem os juros, amortizando assim partes iguais do valor total do empréstimo.
+
+Neste sistema o saldo devedor é reembolsado em valores de amortização iguais. Desta forma, no sistema SAC o valor das prestações é decrescente, já que os juros diminuem a cada prestação. O valor da amortização é calculada dividindo-se o valor do principal pelo número de períodos de pagamento, ou seja, de parcelas.
+
+O SAC é um dos tipos de sistema de amortização utilizados em financiamentos imobiliários. A principal característica do SAC é que ele amortiza um percentual fixo do valor principal (emissão), desde o início do financiamento. Esse percentual de amortização é sempre o mesmo, o que faz com que a parcela de amortização da dívida seja maior no início do financiamento, fazendo com que o saldo devedor caia mais rapidamente do que em outros mecanismos de amortização.
+
+Texto retirado do Wikipédia.
+        </textarea>
+    <%@include file="WEB-INF/jspf/menu.jspf"%>
+    <%@include file="WEB-INF/jspf/footer.jspf"%> <!--Rodapé -->
     </center>
 </body>
 </html>

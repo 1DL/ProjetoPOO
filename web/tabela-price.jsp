@@ -16,7 +16,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/header.jspf" %>
-        <h1><b><center>Financiamento Price</center></b></h1>
+        <h1><b><center>Financiamento pela Tabela Price</center></b></h1>
     <center>
         <%
             //Declaração de variaveis
@@ -113,7 +113,7 @@
 
         %>
 
-        <%@include file="WEB-INF/jspf/menu.jspf"%> <!--Segmento com os campos de entrada de dados-->
+        <%@include file="WEB-INF/jspf/form.jspf"%> <!--Segmento com os campos de entrada de dados-->
                
         <div>
             <%
@@ -182,6 +182,17 @@
 
             %>
         </div>
+        
+        <h3> Sobre a Tabela Price: </h3>
+        <textarea rows="12" cols="70">Tabela Price, também chamado de sistema francês de amortização, é um método usado em amortização de empréstimo cuja principal característica é apresentar prestações (ou parcelas) iguais. O método foi apresentado em 1771 por Richard Price em sua obra "Observações sobre Pagamentos Remissivos" (em inglês: Observations on Reversionary Payments[1]).
+
+O método foi idealizado pelo seu autor para pensões e aposentadorias. No entanto, foi a partir da 2ª revolução industrial que sua metodologia de cálculo foi aproveitada para cálculos de amortização de empréstimo.
+
+Texto retirado da Wikipédia.
+        </textarea>
+        <%@include file="WEB-INF/jspf/menu.jspf"%>
+        <%@include file="WEB-INF/jspf/footer.jspf"%> <!--Rodapé -->
+        
     </center>
 </body>
 </html>
