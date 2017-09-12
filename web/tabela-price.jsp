@@ -126,8 +126,8 @@
 
 
             <br>
-            <table border="1">
-                <thead
+            <table border="1" bgcolor="#FFFFFF">
+                
                 <tr  bgcolor="#E3F6CE">
                     <th>Número da Parcela</th>
                     <th>Juros</th>
@@ -136,7 +136,7 @@
                     <th>Saldo Devedor</th>
 
                 </tr>
-                <tr bgcolor="#FFFFFF">
+                <tr>
                     <td><center>-</center></td>
                 <td><center>-</center></td>
                 <td><center>-</center></td>
@@ -162,10 +162,10 @@
                     total[1] += pmt;
                     total[2] += a;
                     
-                    if (j%2 == 0){%>
+                    %>
                 
                    
-                <tr bgcolor="#FFFFFF"><%} else {%> <tr bgcolor="#F2F2F2"> <%}%>
+                <tr> 
                     <td><center><%=j%></center></td>
                 <td><center><%=formata.format(juros)%></center></td>
                 <td><center><%=formata.format(pmt)%></center></td>
@@ -173,7 +173,7 @@
                 <td><center><%=formata.format(pv)%></center></td>
                 </tr>
                 <%}%>
-                <tr><!--Ultima linha da tabela é manual, concatenando o total de cada valor-->
+                <tr  bgcolor="#E3F6CE"><!--Ultima linha da tabela é manual, concatenando o total de cada valor-->
                     <td><center><b>TOTAL</b></center></td>
                 <td><center><%=formata.format(total[0])%></center></td>
                 <td><center><%=formata.format(total[1])%></center></td>
@@ -181,9 +181,7 @@
                 <td><center><%=formata.format(0)%></center></td>
                 </tr>
             </table>
-            <%}
-
-            %>
+            <%}%>
         </div>
         
         <h3> Sobre a Tabela Price: </h3>

@@ -52,7 +52,7 @@
             </tr>
 
             <tr>
-                <td><center>0</center></td>
+                <td><center>-</center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
             <td><center> - </center></td>
@@ -71,8 +71,8 @@
                     if (i == (parc - 1)){   
             %>
                   
-            <tr>bgcolor="#E3F6CE">
-            <td><center><%= "total" %></center></td>
+            <tr bgcolor="#E3F6CE">
+                <td><center><b>TOTAL</b></center></td>
             <td><center><%=formata.format(txJuros[i])%></center></td>
             <td><center><%=formata.format(valor + txJuros[i])%></center></td>
             <td><center><%=formata.format(valor)%></center></td>
