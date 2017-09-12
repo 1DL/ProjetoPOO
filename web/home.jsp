@@ -23,8 +23,8 @@ Author     : LuizV1
                 <legend><h1>Programação Orientada a Objetos - Segundo projeto</h1> 
                     <h2>Proposta:</h2>
                     <font face ="verdana" size="3"><b>Esta aplicação web tem como 
-                        objetivo gerar tabelas, de acordo com o tipo de Amortização 
-                        de um financiamento desejado. Para esse projeto, os tipos
+                        objetivo gerar tabelas, de acordo com o tipo de amortização 
+                        desejado. Para esse projeto, os tipos
                         de financiamento disponíveis são: Amortização Constante,
                         Amortização Americana, e financiamento baseado na Tabela Price. </b></font></p></legend>
                 <hr>
@@ -38,7 +38,7 @@ Author     : LuizV1
                     Luiz Henrique - <a href="https://github.com/1DL">@1DL</a></h2>
                 </div></center>
                     <center><img src="imagens/github.png" alt="Logo do Github">
-                    <h2><a href="https://github.com/1DL/ProjetoPOO">Ir Para O repositório no GitHub</a></h2></center><br>
+                    <h2><a href="https://github.com/1DL/ProjetoPOO">Ir Para o repositório do GitHub</a></h2></center><br>
                 </ul></nav>
         </header>
         
